@@ -1,7 +1,5 @@
 #include "word_iterator.h"
 
-#include <iostream>
-
 using namespace Tools;
 
 
@@ -28,12 +26,6 @@ const char* WordIterator::operator*() {
 	return str;
 }
 
-void WordIterator::toNextWord() {
-	word_start_ = current_position_;
-	while (*current_position_ != sep_ && *current_position_ != '\0') {current_position_++;}
-	current_position_ += 1;
-}
-
 WordIterator& WordIterator::operator=(const WordIterator& rhs) {
 	this->word_start_ = rhs.word_start_;
 	this->current_position_ = rhs.current_position_;
@@ -47,4 +39,10 @@ bool WordIterator::operator==(const WordIterator& rhs) {
 
 bool WordIterator::operator!=(const WordIterator& rhs) {
 	return !(*this == rhs);
+}
+
+void WordIterator::toNextWord() {
+	word_start_ = current_position_;
+	while (*current_position_ != sep_ && *current_position_ != '\0') {current_position_++;}
+	current_position_ += 1;
 }

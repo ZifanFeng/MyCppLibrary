@@ -1,6 +1,10 @@
 #ifndef WORD_ITERATOR_H
 #define WORD_ITERATOR_H
 
+/* 
+WorldIterator takes a seperator and a string, and iterate through each word seperated by the sep
+*/
+
 #include <iterator>
 #include <memory>
 #include <string>

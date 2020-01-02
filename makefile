@@ -1,11 +1,16 @@
-CC=g++
-CXXFLAGS=-g -std=c++11 -stdlib=libc++ -lgtest
+CC=clang++
+CXXFLAGS=-g -std=c++14 -stdlib=libc++ 
+LD_FLAGS = -lgtest -l pthread
 
-ALL_DEPS = word_iterator.h
-OBJ = main.o word_iterator.o
+DEPS=word_iterator.h zip_iterator.h
+OBJ=main.o word_iterator.o zip_iterator.o word_iterator_test.o zip_iterator_test.o
+TARGET=mylibrary
 
-%.o: %.c $(ALL_DEPS)
-	$(CC) -c -o $@ $< $(CXXFLAGS)
+%.o: %.cpp $(DEPS)
+	$(CC) -o $@ -c $< $(CXXFLAGS) -I.
 
-mylibrary: $(OBJ)
-	$(CC) -o $@ $^ $(CXXFLAGS)
+$(TARGET): $(OBJ)
+	$(CC) -o $@  $^ $(CXXFLAGS) $(LD_FLAGS)
+
+clean:
+	rm *.o $(TARGET)
