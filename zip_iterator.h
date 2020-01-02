@@ -29,13 +29,10 @@ namespace Tools {
 		bool operator==(const ZipIterator& rhs);
 		bool operator!=(const ZipIterator& rhs);
 		std::tuple<typename std::iterator_traits<Iterators>::value_type...> operator*();
-		
 
 	private:
 		std::tuple<Iterators...> iters_;
 	};
-
-
 }
 
 #endif // ZIP_ITERATOR_H
