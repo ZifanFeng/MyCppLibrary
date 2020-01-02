@@ -30,7 +30,7 @@ public:
     }
 };
 
-class ZipIteratorTest :public ZipIteratorTestFixtureBase, 
+class ZipIteratorTest : public ZipIteratorTestFixtureBase, 
 						public ::testing::WithParamInterface<struct zipIteratorState> {
 public:
 	virtual void SetUp() {
