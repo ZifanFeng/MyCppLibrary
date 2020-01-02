@@ -65,8 +65,8 @@ INSTANTIATE_TEST_SUITE_P(
         WordIteratorTest,
         ::testing::Values(
                 wordIteratorState{3, ' ', "apple banana clement", "apple", "banana", "clement"},
-                wordIteratorState{4, ' ', "    ", "", "", ""},
+                wordIteratorState{5, ' ', "    ", "", "", ""},
                 wordIteratorState{1, ' ', "apple", "apple", "", ""}, 
                 wordIteratorState{0, ' ', "", "", "", ""}, 
-                wordIteratorState{3, ',', "apple,banana,clement", "apple", "banana", "clement"}
+                wordIteratorState{4, ',', "apple,banana,clement,", "apple", "banana", ""}
                 ));
