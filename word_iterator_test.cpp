@@ -27,7 +27,7 @@ public:
 };
 
 class WordIteratorTest :public WordIteratorTestFixtureBase, 
-						public ::testing::WithParamInterface<struct wordIteratorState> {
+			public ::testing::WithParamInterface<struct wordIteratorState> {
 public:
 	virtual void SetUp() {
 		auto as = GetParam();
