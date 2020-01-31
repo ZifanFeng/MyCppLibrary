@@ -27,7 +27,7 @@ public:
 };
 
 class WordIteratorTest :public WordIteratorTestFixtureBase, 
-						public ::testing::WithParamInterface<struct wordIteratorState> {
+			public ::testing::WithParamInterface<struct wordIteratorState> {
 public:
 	virtual void SetUp() {
 		auto as = GetParam();
@@ -68,5 +68,6 @@ INSTANTIATE_TEST_SUITE_P(
                 wordIteratorState{5, ' ', "    ", "", "", ""},
                 wordIteratorState{1, ' ', "apple", "apple", "", ""}, 
                 wordIteratorState{0, ' ', "", "", "", ""}, 
+                wordIteratorState{3, ',', "apple,banana,clement", "apple", "banana", "clement"}
                 wordIteratorState{4, ',', "apple,banana,clement,", "apple", "banana", ""}
                 ));
