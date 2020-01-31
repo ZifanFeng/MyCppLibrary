@@ -2,7 +2,7 @@ CC=clang++
 CXXFLAGS=-g -std=c++14 -stdlib=libc++ 
 LD_FLAGS = -lgtest -l pthread
 
-DEPS=word_iterator.h zip_iterator.h units.h body_calculator.h
+DEPS=word_iterator.h zip_iterator.h units.h body_calculator.h unit_operations.h
 OBJ=main.o word_iterator.o zip_iterator.o word_iterator_test.o zip_iterator_test.o body_calculator_test.o
 TARGET=mylibrary
 
